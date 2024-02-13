@@ -21,11 +21,18 @@ const Feed: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div
-        className="lt"
+        className="rt"
         css={{
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
+        <ProfileCard />
+        <ServiceCard />
+        <ContactCard />
+        <div className="footer">
+          <Footer />
+        </div>
+      </div>
         <TagList />
       </div>
       <div className="mid">
@@ -40,19 +47,13 @@ const Feed: React.FC<Props> = () => {
           <Footer />
         </div>
       </div>
-      <div
-        className="rt"
-        css={{
-          height: `calc(100vh - ${HEADER_HEIGHT}px)`,
-        }}
-      >
-        <ProfileCard />
-        <ServiceCard />
-        <ContactCard />
-        <div className="footer">
-          <Footer />
-        </div>
-      </div>
+          <div
+          className="lt"
+          css={{
+            height: `calc(100vh - ${HEADER_HEIGHT}px)`,
+          }}
+        >
+
     </StyledWrapper>
   )
 }
