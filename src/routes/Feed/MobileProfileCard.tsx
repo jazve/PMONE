@@ -10,7 +10,7 @@ type Props = {
 const MobileProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
-      <div className="top">关于我</div>
+      
       <div className="mid">
         <div className="wrapper">
           <Image
