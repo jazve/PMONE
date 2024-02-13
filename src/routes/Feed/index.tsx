@@ -20,6 +20,7 @@ const Feed: React.FC<Props> = () => {
 
   return (
     <StyledWrapper>
+
       <div
         className="rt"
         css={{
@@ -33,8 +34,7 @@ const Feed: React.FC<Props> = () => {
           <Footer />
         </div>
       </div>
-        <TagList />
-      </div>
+      
       <div className="mid">
         <MobileProfileCard />
         <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
@@ -47,12 +47,16 @@ const Feed: React.FC<Props> = () => {
           <Footer />
         </div>
       </div>
-          <div
-          className="lt"
-          css={{
-            height: `calc(100vh - ${HEADER_HEIGHT}px)`,
-          }}
-        >
+
+
+      <div
+        className="lt"
+        css={{
+          height: `calc(100vh - ${HEADER_HEIGHT}px)`,
+        }}
+      >
+        <TagList />
+      </div>
 
     </StyledWrapper>
   )
