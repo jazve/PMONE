@@ -63,7 +63,7 @@ export default ContactCard
 
 const StyledTitle = styled.div`
   padding: 0.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   font-size: 0.875rem;
 `
 const StyledWrapper = styled.div`

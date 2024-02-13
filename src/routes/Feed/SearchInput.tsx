@@ -33,8 +33,8 @@ const StyledWrapper = styled.div`
     margin-bottom: 0.75rem;
   }
   > .mid {
-    padding-top: 0.65rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     border-radius: 1rem;
