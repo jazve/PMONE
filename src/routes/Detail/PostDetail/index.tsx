@@ -18,7 +18,6 @@ const PostDetail: React.FC<Props> = () => {
 
   return (
     <StyledWrapper>
-      <div>test</div>
       <article>
         {category && (
           <div css={{ marginBottom: "0.5rem" }}>
