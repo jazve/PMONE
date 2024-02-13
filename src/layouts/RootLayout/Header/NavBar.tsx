@@ -4,7 +4,7 @@ import Link from "next/link"
 const NavBar: React.FC = () => {
   const links = [{ id: 1, name: "关于", to: "/about" },{ id: 1, name: "AI图谱", to: "/aimap" }]
   return (
-    <StyledWrapper className="newnav">
+    <StyledWrapper className="">
       <ul>
         {links.map((link) => (
           <li key={link.id}>
@@ -20,18 +20,13 @@ export default NavBar
 
 const StyledWrapper = styled.div`
   flex-shrink: 0;
-  .newnav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem 0;
-    font-size: 0.875rem;
-  }
   ul {
     display: flex;
     flex-direction: row;
     li {
       display: block;
-      margin-left: 1rem;
+      margin:0rem 1rem;
+      font-size: 0.875rem;
       color: ${({ theme }) => theme.colors.gray11};
     }
   }
