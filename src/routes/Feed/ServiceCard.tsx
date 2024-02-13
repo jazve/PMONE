@@ -33,12 +33,13 @@ export default ServiceCard
 const StyledTitle = styled.div`
   padding: 0.25rem;
   margin-bottom: 0.75rem;
+  font-size: 0.875rem;
 `
 
 const StyledWrapper = styled.div`
   display: flex;
   padding: 0.25rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
   flex-direction: column;
   border-radius: 1rem;
   background-color: ${({ theme }) =>
