@@ -19,8 +19,9 @@ const PostHeader: React.FC<Props> = ({ data }) => {
           <div className="top">
             {data.author && data.author[0] && data.author[0].name && (
               <>
-                {/* <div className="author">
-                  <Image
+                
+                <div className="author">
+                  {/* <Image
                     css={{ borderRadius: "50%" }}
                     src={data.author[0].profile_photo || CONFIG.profile.image}
                     alt="profile_photo"
