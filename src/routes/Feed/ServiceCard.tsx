@@ -9,7 +9,7 @@ const ServiceCard: React.FC = () => {
   return (
     <>
       <StyledTitle>
-        Service
+        项目归档
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
