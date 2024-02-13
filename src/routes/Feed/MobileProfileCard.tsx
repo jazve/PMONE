@@ -46,7 +46,7 @@ const StyledWrapper = styled.div`
   }
   > .mid {
     padding: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
     background-color: ${({ theme }) =>

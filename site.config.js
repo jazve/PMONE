@@ -15,6 +15,18 @@ const CONFIG = {
       name: `PMONE`,
       href: "https://github.com/morethanmin/morethan-log",
     },
+    {
+      name: `校早`,
+      href: "https://github.com/morethanmin/morethan-log",
+    },
+    {
+      name: `ChatRSS`,
+      href: "https://github.com/morethanmin/morethan-log",
+    },
+    {
+      name: `LANGOS`,
+      href: "https://github.com/morethanmin/morethan-log",
+    },
   ],
   // blog setting (required)
   blog: {
