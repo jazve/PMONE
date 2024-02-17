@@ -48,8 +48,8 @@ const StyledWrapper = styled.div`
   // padding-right: 1.5rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-radius: 1rem;
-  max-width: 56rem;
+  border-radius: 0.875rem;
+  max-width: 48rem;
   background-color: ${({ theme }) =>
     theme.scheme === "light" ? "white" : theme.colors.gray4};
   margin: 0 auto;
