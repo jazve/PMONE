@@ -34,7 +34,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
         )}
         <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
           <header className="top">
-            <h2>{data.title}</h2>
+            <div>{data.title}</div>
           </header>
           <div className="date">
             <div className="content">
@@ -112,6 +112,7 @@ const StyledWrapper = styled(Link)`
       }
       > .top {
         display: flex;
+        font-size: 20px;
         flex-direction: column;
         justify-content: space-between;
 
