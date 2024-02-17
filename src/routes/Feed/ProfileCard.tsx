@@ -14,7 +14,7 @@ const ProfileCard: React.FC<Props> = () => {
       </div> */}
       <div className="content">
         <div className="top">
-          <Image src={CONFIG.profile.image} fill alt="" />
+          <Image src={CONFIG.profile.image} />
           <div >
             <div className="name">{CONFIG.profile.name}</div>
             <div className="role">{CONFIG.profile.role}</div>
