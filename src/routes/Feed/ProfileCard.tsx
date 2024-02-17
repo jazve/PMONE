@@ -15,10 +15,12 @@ const ProfileCard: React.FC<Props> = () => {
       <div className="content">
         <div className="top">
           <Image src={CONFIG.profile.image} fill alt="" />
+          <div className: "new">
+            <div className="name">{CONFIG.profile.name}</div>
+            <div className="role">{CONFIG.profile.role}</div>
+          </div>
         </div>
         <div className="mid">
-          <div className="name">{CONFIG.profile.name}</div>
-          <div className="role">{CONFIG.profile.role}</div>
           <div className="bio">{CONFIG.profile.bio}</div>
         </div>
       </div>
@@ -34,11 +36,11 @@ const StyledWrapper = styled.div`
     margin-bottom: 0.75rem;
   }
   > .content {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;1
     border-radius: 1rem;
     width: 100%;
     background-color: ${({ theme }) =>
-      theme.scheme === "light" ? "white" : theme.colors.gray4};
+      theme.scheme === "light" ? "rgba(0, 0, 0, 0.03)" : theme.colors.gray4};
     @media (min-width: 768px) {
       padding: 1rem;
     }
@@ -46,13 +48,31 @@ const StyledWrapper = styled.div`
       padding: 1rem;
     }
     .top {
-      position: relative;
+      display: flex;
+      flex-direction: row;
+      padding: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
       width: 100%;
-      &:after {
-        content: "";
-        display: block;
-        padding-bottom: 50%;
+      .new {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .name {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+          font-weight: 700;
+        }
+        .role {
+          margin-bottom: 1rem;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: ${({ theme }) => theme.colors.gray11};
+        }
       }
+      
     }
     .mid {
       display: flex;
