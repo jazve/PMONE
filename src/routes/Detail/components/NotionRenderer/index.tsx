@@ -98,4 +98,12 @@ const StyledWrapper = styled.div`
   .notion-asset-wrapper > div {
     height: auto !important;
   }
+  .notion-callout {
+    border-radius: 0rem;
+    padding: 0rem;
+    padding-left: 16px;
+    margin: 0rem;
+    border : none;
+    border-left: 1px solid var(--fg-color-0);
+  }
 `
