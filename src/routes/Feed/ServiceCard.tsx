@@ -24,9 +24,9 @@ const ServiceCard: React.FC = () => {
           </a>
         ))}
       </StyledWrapper>
-      {/* <StyledTitle>
+      <StyledTitle>
         实验项目
-      </StyledTitle> */}
+      </StyledTitle>
       <StyledWrapper>
         <a>
             <AiFillCodeSandboxCircle className="icon" />
