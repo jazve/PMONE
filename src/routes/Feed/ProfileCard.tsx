@@ -18,7 +18,7 @@ const ProfileCard: React.FC<Props> = () => {
           <div className= "new">
             <div className="name">{CONFIG.profile.name}</div>
             <div className="role">{CONFIG.profile.role}</div>
-            <div className="bio">{CONFIG.profile.bio}</div>
+            {/* <div className="bio">{CONFIG.profile.bio}</div> */}
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ const StyledWrapper = styled.div`
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       gap: 0.5rem;
       width: 100%;
 
@@ -72,7 +72,6 @@ const StyledWrapper = styled.div`
           font-weight: 700;
         }
         .role {
-          margin-bottom: 1rem;
           font-size: 0.875rem;
           line-height: 1.25rem;
           color: ${({ theme }) => theme.colors.gray11};
