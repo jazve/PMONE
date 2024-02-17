@@ -87,6 +87,7 @@ const StyledWrapper = styled.div`
     padding: 0;
   }
   .notion-asset-wrapper img {
+    weight: 100%;
     height: auto !important;
     border-radius: 0.5rem;
   }
