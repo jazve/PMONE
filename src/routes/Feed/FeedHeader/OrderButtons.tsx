@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
 
-type TOrder = "升序" | "降序"
+type TOrder = "asc" | "desc"
 
 type Props = {}
 
