@@ -36,9 +36,9 @@ export default MobileProfileCard
 const StyledWrapper = styled.div`
   display: block;
 
-  @media (min-width: 1024px) {
-    display: none;
-  }
+  // @media (min-width: 1024px) {
+  //   display: none;
+  // }
 
   > .top {
     padding: 0.25rem;

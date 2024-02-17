@@ -9,21 +9,17 @@ type Props = {}
 const ProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
-      
-      <div className="mid">
-        <div className="wrapper">
-          <Image
-            src={CONFIG.profile.image}
-            width={90}
-            height={90}
-            css={{ position: "relative" }}
-            alt="profile_image"
-          />
-          <div className="wrapper">
-            <div className="top">{CONFIG.profile.name}</div>
-            <div className="mid">{CONFIG.profile.role}</div>
-            <div className="btm">{CONFIG.profile.bio}</div>
-          </div>
+      {/* <div className="title">
+        关于我
+      </div> */}
+      <div className="content">
+        <div className="top">
+          <Image src={CONFIG.profile.image} fill alt="" />
+        </div>
+        <div className="mid">
+          <div className="name">{CONFIG.profile.name}</div>
+          <div className="role">{CONFIG.profile.role}</div>
+          <div className="bio">{CONFIG.profile.bio}</div>
         </div>
       </div>
     </StyledWrapper>
@@ -42,7 +38,7 @@ const StyledWrapper = styled.div`
     border-radius: 1rem;
     width: 100%;
     background-color: ${({ theme }) =>
-      theme.scheme === "light" ? "rgba(0, 0, 0, 0.03)" : theme.colors.gray4};
+      theme.scheme === "light" ? "white" : theme.colors.gray4};
     @media (min-width: 768px) {
       padding: 1rem;
     }
@@ -50,13 +46,12 @@ const StyledWrapper = styled.div`
       padding: 1rem;
     }
     .top {
-      display: flex;
       position: relative;
       width: 100%;
       &:after {
         content: "";
         display: block;
-        padding-bottom: 60%;
+        padding-bottom: 50%;
       }
     }
     .mid {
