@@ -99,6 +99,7 @@ const StyledWrapper = styled.div`
     height: auto !important;
   }
   .notion-callout {
+    margin: 16px 0;
     border-radius: 0rem;
     padding: 0rem;
     padding-left: 16px;
