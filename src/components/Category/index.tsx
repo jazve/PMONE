@@ -47,13 +47,13 @@ export default Category
 const StyledWrapper = styled.div`
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   // border-radius: 9999px;
   width: fit-content;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  opacity: 0.7;
+  opacity: 0.9;
   border-bottom: 0.05em solid;
   border-color: rgba(0,0,0,.075);
   // color: ${colors.dark.gray1};
