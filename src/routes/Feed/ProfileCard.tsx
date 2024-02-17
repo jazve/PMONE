@@ -55,6 +55,14 @@ const StyledWrapper = styled.div`
       justify-content: center;
       gap: 1rem;
       width: 100%;
+
+      img {
+        display: block;
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
     }
     .mid {
       display: flex;
