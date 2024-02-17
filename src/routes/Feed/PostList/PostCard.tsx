@@ -34,7 +34,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
         )}
         <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
           <header className="top">
-            <div>{data.title}</div>
+            <h2>{data.title}</h2>
           </header>
           <div className="date">
             <div className="content">
@@ -71,7 +71,7 @@ const StyledWrapper = styled(Link)`
     border-color: rgba(0,0,0,.075);
     // border-radius: 1rem;
     background-color: ${({ theme }) =>
-      theme.scheme === "light" ? "white" : theme.colors.gray4};
+      theme.scheme === "light" ? "none" : theme.colors.gray4};
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
@@ -93,6 +93,7 @@ const StyledWrapper = styled(Link)`
 
     > .thumbnail {
       position: relative;
+      border-radius: 1rem;
       width: 100%;
       background-color: ${({ theme }) => theme.colors.gray2};
       padding-bottom: 66%;
@@ -112,7 +113,6 @@ const StyledWrapper = styled(Link)`
       }
       > .top {
         display: flex;
-        font-size: 20px;
         flex-direction: column;
         justify-content: space-between;
 
@@ -122,7 +122,7 @@ const StyledWrapper = styled(Link)`
         }
         h2 {
           margin-bottom: 0.5rem;
-          font-size: 1.125rem;
+          font-size: 18px;
           line-height: 1.75rem;
           font-weight: 500;
 
