@@ -98,7 +98,7 @@ const StyledWrapper = styled(Link)`
       background-color: ${({ theme }) => theme.colors.gray2};
       padding-bottom: 66%;
 
-      @media {
+      img {
         border-radius: 1rem;
       }
 
