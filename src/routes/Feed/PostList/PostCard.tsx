@@ -75,6 +75,7 @@ const StyledWrapper = styled(Link)`
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
+    transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
 
     @media (min-width: 768px) {
       // margin-bottom: 2rem;
@@ -89,7 +90,7 @@ const StyledWrapper = styled(Link)`
         border: none;
         margin: 2rem 0;
         padding: 4rem;
-        transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+        // transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     }
     > .category {
       position: absolute;
