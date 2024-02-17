@@ -86,4 +86,15 @@ const StyledWrapper = styled.div`
   .notion-page {
     padding: 0;
   }
+  .notion-asset-wrapper img {
+    height: auto !important;
+  }
+  // 子元素高度为auto
+  .notion-asset-wrapper {
+    height: auto !important;
+  }
+  // 子元素高度为auto
+  .notion-asset-wrapper > div {
+    height: auto !important;
+  }
 `
