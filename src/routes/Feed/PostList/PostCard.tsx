@@ -126,9 +126,9 @@ const StyledWrapper = styled(Link)`
         }
         h2 {
           margin-bottom: 0.5rem;
-          font-size: 18px;
+          font-size: 18px !important;
           line-height: 1.75rem;
-          font-weight: 500;
+          font-weight: bold;
 
           cursor: pointer;
 
@@ -156,6 +156,7 @@ const StyledWrapper = styled(Link)`
         margin-bottom: 1rem;
         p {
           display: none;
+          font-size: 14px !important;
           line-height: 2rem;
           color: ${({ theme }) => theme.colors.gray11};
 
