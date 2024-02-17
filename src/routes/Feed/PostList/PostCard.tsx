@@ -65,8 +65,11 @@ const StyledWrapper = styled(Link)`
   article {
     overflow: hidden;
     position: relative;
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
+    // margin-bottom: 1.5rem;
+    padding: 4rem;
+    border-bottom: 1px solid;
+    border-color: rgba(0,0,0,.075);
+    // border-radius: 1rem;
     background-color: ${({ theme }) =>
       theme.scheme === "light" ? "white" : theme.colors.gray4};
     transition-property: box-shadow;
@@ -74,7 +77,7 @@ const StyledWrapper = styled(Link)`
     transition-duration: 300ms;
 
     @media (min-width: 768px) {
-      margin-bottom: 2rem;
+      // margin-bottom: 2rem;
     }
 
     :hover {
