@@ -56,6 +56,6 @@ const StyledWrapper = styled.div`
   opacity: 0.7;
   border-bottom: 1px solid;
   border-color: rgba(0,0,0,.075);
-  background: white !important;
+  background: none !important;
   color: ${colors.dark.gray1};
 `
