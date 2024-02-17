@@ -51,7 +51,7 @@ const StyledWrapper = styled.div`
       &:after {
         content: "";
         display: block;
-        padding-bottom: 50%;
+        padding-bottom: 60%;
       }
     }
     .mid {
