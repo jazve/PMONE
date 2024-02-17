@@ -105,6 +105,6 @@ const StyledWrapper = styled.div`
     padding: 0rem;
     padding-left: 16px;
     border : none;
-    border-left: 1px solid var(--fg-color-0);
+    border-left: 1px solid rgba(0,0,0,.075);
   }
 `
