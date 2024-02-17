@@ -102,7 +102,6 @@ const StyledWrapper = styled.div`
     border-radius: 0rem;
     padding: 0rem;
     padding-left: 16px;
-    margin: 0rem;
     border : none;
     border-left: 1px solid var(--fg-color-0);
   }
