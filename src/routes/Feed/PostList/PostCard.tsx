@@ -88,6 +88,7 @@ const StyledWrapper = styled(Link)`
         border-radius: 1rem;
         border: none;
         margin: 2rem 0;
+        padding: 4rem;
     }
     > .category {
       position: absolute;
