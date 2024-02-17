@@ -11,7 +11,7 @@ import styled from "@emotion/styled"
 const ContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>联系方式</StyledTitle>
+      {/* <StyledTitle>联系方式</StyledTitle> */}
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
