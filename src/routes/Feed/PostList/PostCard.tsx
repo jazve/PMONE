@@ -71,7 +71,7 @@ const StyledWrapper = styled(Link)`
     border-color: rgba(0,0,0,.075);
     // border-radius: 1rem;
     background-color: ${({ theme }) =>
-      theme.scheme === "light" ? "none" : theme.colors.gray4};
+      theme.scheme === "light" ? "none" : "none"};
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
