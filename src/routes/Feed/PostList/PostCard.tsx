@@ -87,6 +87,7 @@ const StyledWrapper = styled(Link)`
         theme.scheme === "light" ? "white" : theme.colors.gray4};
         border-radius: 1rem;
         border: none;
+        margin: 2rem 0;
     }
     > .category {
       position: absolute;
