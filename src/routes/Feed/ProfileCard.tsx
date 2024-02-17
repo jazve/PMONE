@@ -14,7 +14,7 @@ const ProfileCard: React.FC<Props> = () => {
       </div> */}
       <div className="content">
         <div className="top">
-          <Image src={CONFIG.profile.image} />
+          <Image src={CONFIG.profile.image} alt="" />
           <div >
             <div className="name">{CONFIG.profile.name}</div>
             <div className="role">{CONFIG.profile.role}</div>
@@ -58,7 +58,7 @@ const StyledWrapper = styled.div`
 
       img {
         display: block;
-        position: relative;
+        position: relative !important;
         width: 48px;
         height: 48px;
         border-radius: 50%;
