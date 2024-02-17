@@ -102,7 +102,7 @@ const StyledWrapper = styled(Link)`
       }
     }
     > .content {
-      padding: 1rem;
+      padding: 1rem 0;
 
       &[data-thumb="false"] {
         padding-top: 3.5rem;
