@@ -22,5 +22,5 @@ const StyledWrapper = styled.div`
   margin-bottom: 1rem;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 `
