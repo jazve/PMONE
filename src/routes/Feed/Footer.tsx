@@ -28,7 +28,7 @@ export default Footer
 
 const StyledWrapper = styled.div`
   a {
-    margin-top: 2rem;
+    margin-top: 1.25rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
     color: ${({ theme }) => theme.colors.gray10};

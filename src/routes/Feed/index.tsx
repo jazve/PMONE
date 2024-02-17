@@ -131,7 +131,7 @@ const StyledWrapper = styled.div`
     }
 
     .footer {
-      padding-top: 1rem;
+      padding-top: 2rem;
     }
   }
 `
