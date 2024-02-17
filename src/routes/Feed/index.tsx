@@ -47,7 +47,7 @@ const Feed: React.FC<Props> = () => {
         }}
       >
 
-        <ProfileCard />
+        <MobileProfileCard />
         <ServiceCard />
         <ContactCard />
         
