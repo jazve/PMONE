@@ -50,25 +50,19 @@ const StyledWrapper = styled.div`
     .top {
       display: flex;
       flex-direction: row;
-      padding: 0.5rem;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.5rem;
       width: 100%;
 
       img {
         display: block;
         position: relative !important;
-        width: 48px;
-        height: 48px;
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
       }
-    }
-    .mid {
-      display: flex;
-      padding: 0.5rem;
-      flex-direction: column;
-      align-items: center;
+
       .name {
         font-size: 1.25rem;
         line-height: 1.75rem;
@@ -80,6 +74,13 @@ const StyledWrapper = styled.div`
         line-height: 1.25rem;
         color: ${({ theme }) => theme.colors.gray11};
       }
+    }
+    .mid {
+      display: flex;
+      padding: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+      
       .bio {
         margin-bottom: 0.5rem;
         font-size: 0.875rem;
