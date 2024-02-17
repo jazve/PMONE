@@ -29,7 +29,7 @@ const StyledWrapper = styled.div`
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.colors.gray2};
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
 
   .container {
     display: flex;
