@@ -53,8 +53,9 @@ const StyledWrapper = styled.div`
   width: fit-content;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  opacity: 0.9;
-  border-bottom: 0.05em solid;
+  opacity: 0.7;
+  border-bottom: 1px solid;
   border-color: rgba(0,0,0,.075);
-  // color: ${colors.dark.gray1};
+  background: white !important;
+  color: ${colors.dark.gray1};
 `
