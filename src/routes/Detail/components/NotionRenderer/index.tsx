@@ -88,6 +88,7 @@ const StyledWrapper = styled.div`
   }
   .notion-asset-wrapper img {
     height: auto !important;
+    border-radius: 0.5rem;
   }
   // 子元素高度为auto
   .notion-asset-wrapper {
