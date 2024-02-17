@@ -9,7 +9,7 @@ const ServiceCard: React.FC = () => {
   return (
     <>
       <StyledTitle>
-        项目
+        主要项目
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
@@ -23,6 +23,23 @@ const ServiceCard: React.FC = () => {
             <div className="name">{project.name}</div>
           </a>
         ))}
+      </StyledWrapper>
+      <StyledTitle>
+        实验项目
+      </StyledTitle>
+      <StyledWrapper>
+        <a>
+            <AiFillCodeSandboxCircle className="icon" />
+          <div className="name">视频读书</div>
+        </a>
+        <a>
+            <AiFillCodeSandboxCircle className="icon" />
+          <div className="name">AI服装工作流</div>
+        </a>
+        <a>
+            <AiFillCodeSandboxCircle className="icon" />
+          <div className="name">AI产品经理</div>
+          </a>
       </StyledWrapper>
     </>
   )
