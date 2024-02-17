@@ -46,8 +46,8 @@ export default PostDetail
 const StyledWrapper = styled.div`
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   border-radius: 0.875rem;
   max-width: 48rem;
   background-color: ${({ theme }) =>
