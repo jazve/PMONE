@@ -66,7 +66,7 @@ const StyledWrapper = styled(Link)`
     overflow: hidden;
     position: relative;
     // margin-bottom: 1.5rem;
-    padding: 4rem;
+    padding: 1.5rem 4rem;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,.075);
     // border-radius: 1rem;
@@ -97,6 +97,10 @@ const StyledWrapper = styled(Link)`
       width: 100%;
       background-color: ${({ theme }) => theme.colors.gray2};
       padding-bottom: 66%;
+
+      @media {
+        border-radius: 1rem;
+      }
 
       @media (min-width: 1024px) {
         padding-bottom: 50%;
