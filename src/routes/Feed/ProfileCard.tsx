@@ -65,9 +65,9 @@ const StyledWrapper = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         .name {
-          font-size: 1.25rem;
+          font-size: 18px;
           line-height: 1.75rem;
           font-weight: 700;
         }
