@@ -46,10 +46,10 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        
+
         <ProfileCard />
-        <ContactCard />
         <ServiceCard />
+        <ContactCard />
         
         <div className="footer">
           <Footer />
