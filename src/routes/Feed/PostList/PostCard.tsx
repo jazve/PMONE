@@ -96,8 +96,7 @@ const StyledWrapper = styled(Link)`
     }
     > .category {
       // position: absolute;
-      top: 1rem;
-      left: 1rem;
+      margin: 0.5rem 0;
       // z-index: 10;
     }
 
