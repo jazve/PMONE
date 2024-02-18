@@ -68,7 +68,7 @@ const StyledWrapper = styled(Link)`
     overflow: hidden;
     position: relative;
     // margin-bottom: 1.5rem;
-    padding: 2.5rem 4rem;
+    padding: 2rem 4rem;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,.075);
     // border-radius: 1rem;
