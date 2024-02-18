@@ -17,11 +17,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
   return (
     <StyledWrapper href={`/${data.slug}`}>
       <article>
-        {category && (
-          <div className="category">
-            <Category>{category}</Category>
-          </div>
-        )}
+        
         {data.thumbnail && (
           <div className="thumbnail">
             <Image
@@ -32,6 +28,11 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
+        {/* {category && (
+          <div className="category">
+            <Category>{category}</Category>
+          </div>
+        )} */}
         <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
           <header className="top">
             <h2>{data.title}</h2>
@@ -66,7 +67,7 @@ const StyledWrapper = styled(Link)`
     overflow: hidden;
     position: relative;
     // margin-bottom: 1.5rem;
-    padding: 1.5rem 4rem;
+    padding: 2.5rem 4rem;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,.075);
     // border-radius: 1rem;
@@ -115,7 +116,7 @@ const StyledWrapper = styled(Link)`
       }
     }
     > .content {
-      padding: 1rem 0;
+      padding-top: 1rem;
 
       &[data-thumb="false"] {
         padding-top: 3.5rem;
