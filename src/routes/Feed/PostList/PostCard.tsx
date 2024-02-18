@@ -28,12 +28,13 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-        {/* {category && (
+        
+        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
+        {category && (
           <div className="category">
             <Category>{category}</Category>
           </div>
-        )} */}
-        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
+        )}
           <header className="top">
             <h2>{data.title}</h2>
           </header>
@@ -94,10 +95,10 @@ const StyledWrapper = styled(Link)`
         // transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     }
     > .category {
-      position: absolute;
+      // position: absolute;
       top: 1rem;
       left: 1rem;
-      z-index: 10;
+      // z-index: 10;
     }
 
     > .thumbnail {
