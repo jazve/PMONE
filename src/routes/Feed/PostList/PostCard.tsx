@@ -30,11 +30,11 @@ const PostCard: React.FC<Props> = ({ data }) => {
         )}
         
         <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
-        {category && (
+        {/* {category && (
           <div className="category">
             <Category>{category}</Category>
           </div>
-        )}
+        )} */}
           <header className="top">
             <h2>{data.title}</h2>
           </header>
@@ -96,7 +96,7 @@ const StyledWrapper = styled(Link)`
     }
     > .category {
       // position: absolute;
-      margin: 0.5rem 0;
+      margin: 1rem 0;
       // z-index: 10;
     }
 
