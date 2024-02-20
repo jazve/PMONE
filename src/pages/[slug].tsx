@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 
+// 123
 const DetailPage: NextPageWithLayout = () => {
   const post = usePostQuery()
   if (!post) return <CustomError />
