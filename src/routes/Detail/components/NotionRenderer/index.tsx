@@ -107,4 +107,10 @@ const StyledWrapper = styled.div`
     border : none;
     border-left: 1px solid rgba(0,0,0,.075);
   }
+
+  .notion-text {
+    padding: 12px 2px;
+    font-size: 15px;
+    line-height: 1.6rem;
+  }
 `
