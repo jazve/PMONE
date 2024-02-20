@@ -47,24 +47,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
     recordMap: safeRecordMap,
   }))
 
+  // 确保 dehydratedState 不包含 undefined
+  const dehydratedState = dehydrate(queryClient)
+  const safeDehydratedState = JSON.parse(JSON.stringify(dehydratedState))
+
   return {
     props: {
-      dehydratedState: dehydrate(queryClient),
+      dehydratedState: safeDehydratedState,
     },
     revalidate: CONFIG.revalidateTime,
   }
-}
-
-const usePostQuery = () => {
-  const { data: post } = useQuery(
-    queryKey.post(queryClient.getQueryData(queryKey.posts)?.slug),
-    () => getPost(queryClient.getQueryData(queryKey.posts)?.slug),
-    {
-      enabled: Boolean(queryClient.getQueryData(queryKey.posts)?.slug),
-    }
-  )
-
-  return post || null
 }
 
 const DetailPage: NextPageWithLayout = () => {
@@ -73,19 +65,19 @@ const DetailPage: NextPageWithLayout = () => {
   if (!post) return <CustomError />
 
   const image =
-    post?.thumbnail ??
+    post.thumbnail ??
     CONFIG.ogImageGenerateURL ??
-    `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post?.title || "")}.png`
+    `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
 
-  const date = post?.date?.start_date || post?.createdTime || ""
+  const date = post.date?.start_date || post.createdTime || ""
 
   const meta = {
-    title: post?.title || "",
+    title: post.title,
     date: new Date(date).toISOString(),
     image: image,
-    description: post?.summary || "",
-    type: post?.type?.[0] || "",
-    url: `${CONFIG.link}/${post?.slug || ""}`,
+    description: post.summary || "",
+    type: post.type[0],
+    url: `${CONFIG.link}/${post.slug}`,
   }
 
   return (
