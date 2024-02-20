@@ -11,12 +11,10 @@ import { queryKey } from "src/constants/queryKey"
 import { dehydrate } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
-
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
   acceptType: ["Paper", "Post", "Page"],
 }
-
 export const getStaticPaths = async () => {
   const posts = await getPosts()
   const filteredPost = filterPosts(posts, filter)
@@ -25,7 +23,6 @@ export const getStaticPaths = async () => {
     fallback: true,
   }
 }
-
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug
   const posts = await getPosts()
@@ -47,8 +44,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     revalidate: CONFIG.revalidateTime,
   }
 }
-
-// 123
 const DetailPage: NextPageWithLayout = () => {
   const post = usePostQuery()
   if (!post) return <CustomError />
@@ -72,7 +67,6 @@ const DetailPage: NextPageWithLayout = () => {
     </>
   )
 }
-
 DetailPage.getLayout = (page) => {
   return <>{page}</>
 }
