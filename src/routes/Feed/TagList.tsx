@@ -85,7 +85,7 @@ const StyledWrapper = styled.div`
 
     a {
       display: block;
-      opacity: 0.3;
+      opacity: 0.5;
       padding: 0.25rem;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -103,6 +103,7 @@ const StyledWrapper = styled.div`
         opacity: 1;
       }
       &[data-active="true"] {
+        opacity: 1;
         color: ${({ theme }) => theme.colors.gray12};
         background-color: ${({ theme }) => theme.colors.gray4};
 
