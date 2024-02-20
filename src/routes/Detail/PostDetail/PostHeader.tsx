@@ -53,7 +53,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
           )}
         </nav>
       )}
-      <p className="content">{data.content}</p>
+      {/* <p className="content">{data.content}</p> */}
     </StyledWrapper>
   )
 }
@@ -66,11 +66,11 @@ const StyledWrapper = styled.div`
     line-height: 2.25rem;
     font-weight: 700;
   }
-  .content {
-    font-size: 15px;
-    line-height: 1.75rem;
-    opacity: 0.85;
-  }
+  // .content {
+  //   font-size: 15px;
+  //   line-height: 1.75rem;
+  //   opacity: 0.85;
+  // }
   nav {
     margin-top: 1.5rem;
     color: ${({ theme }) => theme.colors.gray11};
