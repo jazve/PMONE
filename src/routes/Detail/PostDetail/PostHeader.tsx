@@ -17,14 +17,14 @@ const PostHeader: React.FC<Props> = ({ data }) => {
       {data.type[0] !== "Paper" && (
         <nav>
           <div className="top">
-            {data.author && data.author[0] && data.author[0].name && (
+            {/* {data.author && data.author[0] && data.author[0].name && (
               <>
                 <div className="author">
                   <div className="">{data.author[0].name}</div>
                 </div>
                 <div className="hr"></div>
               </>
-            )}
+            )} */}
             <div className="date">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
@@ -53,6 +53,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
           )}
         </nav>
       )}
+      <p className="content">{data.Content}</p>
     </StyledWrapper>
   )
 }
@@ -64,6 +65,11 @@ const StyledWrapper = styled.div`
     font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 700;
+  }
+  .content {
+    font-size: 15px;
+    line-height: 1.75rem;
+    opacity: 0.85;
   }
   nav {
     margin-top: 1.5rem;
