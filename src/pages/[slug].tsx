@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
-  const recordMap = await getRecordMap(postDetail?.id!)
+  const recordMap = postDetail ? await getRecordMap(postDetail?.id!) : null
 
   // 确保 postDetail 和 recordMap 不是 undefined
   const safePostDetail = postDetail ?? {}
