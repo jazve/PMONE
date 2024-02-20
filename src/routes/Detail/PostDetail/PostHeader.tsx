@@ -53,7 +53,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
           )}
         </nav>
       )}
-      <p className="content">{data.Content}</p>
+      <p className="content">{data.content}</p>
     </StyledWrapper>
   )
 }
