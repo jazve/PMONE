@@ -95,7 +95,7 @@ const StyledWrapper = styled.div`
     }
     > .mid {
       display: flex;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       align-items: center;
       .tags {
         display: flex;
