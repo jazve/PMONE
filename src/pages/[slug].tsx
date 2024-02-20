@@ -38,9 +38,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
   const recordMap = await getRecordMap(postDetail?.id!)
 
+  // 确保 postDetail 和 recordMap 不是 undefined
+  const safePostDetail = postDetail ?? {}
+  const safeRecordMap = recordMap ?? {}
+
   await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
-    ...postDetail,
-    recordMap,
+    ...safePostDetail,
+    recordMap: safeRecordMap,
   }))
 
   return {
