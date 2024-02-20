@@ -119,10 +119,10 @@ const StyledWrapper = styled(Link)`
       padding-top: 1rem;
 
       &[data-thumb="false"] {
-        padding-top: 3.5rem;
+        padding-top: 0rem;
       }
       &[data-category="false"] {
-        padding-top: 1.5rem;
+        padding-top: 0rem;
       }
       > .top {
         display: flex;
