@@ -111,6 +111,6 @@ const StyledWrapper = styled.div`
   .notion-text {
     padding: 12px 2px;
     font-size: 15px;
-    line-height: 1.6rem;
+    line-height: 1.75rem;
   }
 `
