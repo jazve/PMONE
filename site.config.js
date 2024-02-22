@@ -12,20 +12,16 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `PMONE`,
-      href: "https://github.com/morethanmin/morethan-log",
-    },
-    {
       name: `校早`,
       href: "https://github.com/morethanmin/morethan-log",
     },
     {
-      name: `ChatRSS`,
+      name: `LANGO-OS`,
       href: "https://github.com/morethanmin/morethan-log",
     },
     {
-      name: `LANGOS`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: `氧气PPT`,
+      href: "http://www.o2ppt.com/",
     },
   ],
   // blog setting (required)
