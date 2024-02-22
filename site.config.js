@@ -11,17 +11,18 @@ const CONFIG = {
     instagram: "",
   },
   projects: [
+   
     {
-      name: `校早`,
+      name: `大屏OS-2023`,
       href: "https://github.com/morethanmin/morethan-log",
     },
     {
-      name: `LANGO-OS`,
-      href: "https://github.com/morethanmin/morethan-log",
-    },
-    {
-      name: `氧气PPT`,
+      name: `氧气PPT-2022`,
       href: "http://www.o2ppt.com/",
+    },
+    {
+      name: `校早(2016-2023)`,
+      href: "https://github.com/morethanmin/morethan-log",
     },
   ],
   // blog setting (required)
