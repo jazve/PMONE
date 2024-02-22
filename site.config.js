@@ -21,7 +21,7 @@ const CONFIG = {
       href: "http://www.o2ppt.com/",
     },
     {
-      name: `校早(2016-2023)`,
+      name: `校早 2016-2023`,
       href: "https://github.com/morethanmin/morethan-log",
     },
   ],
