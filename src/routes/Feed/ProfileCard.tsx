@@ -72,7 +72,7 @@ const StyledWrapper = styled.div`
           font-weight: 700;
         }
         .role {
-          font-size: 0.875rem;
+          font-size: 13px;
           line-height: 1.25rem;
           color: ${({ theme }) => theme.colors.gray11};
         }
