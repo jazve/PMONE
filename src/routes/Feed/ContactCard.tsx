@@ -5,6 +5,7 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
   AiFillLinkedin,
+  AiOutlineWechat,
 } from "react-icons/ai"
 import styled from "@emotion/styled"
 
@@ -19,8 +20,8 @@ const ContactCard: React.FC = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <AiOutlineGithub className="icon" />
-            <div className="name">github</div>
+            <AiOutlineWechat className="icon" />
+            <div className="name">微信</div>
           </a>
         )}
         {CONFIG.profile.instagram && (
