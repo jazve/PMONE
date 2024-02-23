@@ -1,6 +1,6 @@
 import { CONFIG } from "site.config"
 import React from "react"
-import { AiFillCodeSandboxCircle } from "react-icons/ai"
+import { AiFillCodeSandboxCircle,AiFillAppstore,AiFillFilePpt,AiFillExperiment,AiFillPlayCircle } from "react-icons/ai"
 import styled from "@emotion/styled"
 import { Emoji } from "src/components/Emoji"
 
@@ -12,32 +12,29 @@ const ServiceCard: React.FC = () => {
         主要项目
       </StyledTitle>
       <StyledWrapper>
-        {CONFIG.projects.map((project, idx) => (
-          <a
-            key={idx}
-            href={`${project.href}`}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <AiFillCodeSandboxCircle className="icon" />
-            <div className="name">{project.name}</div>
+        <a>
+            <AiFillAppstore className="icon" />
+          <div className="name">商显OS设计（2023）</div>
+        </a>
+        <a>
+            <AiFillFilePpt className="icon" />
+          <div className="name">氧气PPT（2022）</div>
           </a>
-        ))}
+        <a>
+            <AiFillCodeSandboxCircle className="icon" />
+          <div className="name">校早（2016-2023）</div>
+          </a>
       </StyledWrapper>
       <StyledTitle>
         实验项目
       </StyledTitle>
       <StyledWrapper>
         <a>
-            <AiFillCodeSandboxCircle className="icon" />
+            <AiFillPlayCircle className="icon" />
           <div className="name">视频读书</div>
         </a>
         <a>
-            <AiFillCodeSandboxCircle className="icon" />
-          <div className="name">AI服装工作流</div>
-        </a>
-        <a>
-            <AiFillCodeSandboxCircle className="icon" />
+            <AiFillExperiment className="icon" />
           <div className="name">AI产品经理</div>
           </a>
       </StyledWrapper>
