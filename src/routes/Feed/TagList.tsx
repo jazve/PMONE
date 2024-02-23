@@ -57,7 +57,7 @@ export default TagList
 const StyledWrapper = styled.div`
   .top {
     display: none;
-    padding: 0.25rem;
+    padding: 0.25rem 1rem;
     margin-bottom: 0.75rem;
     font-size: 0.875rem;
 
