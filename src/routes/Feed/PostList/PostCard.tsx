@@ -67,8 +67,8 @@ const StyledWrapper = styled(Link)`
   article {
     overflow: hidden;
     position: relative;
-    // margin-bottom: 1.5rem;
-    padding: 2rem 4rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,.075);
     // border-radius: 1rem;
@@ -95,11 +95,9 @@ const StyledWrapper = styled(Link)`
         background-color: ${({ theme }) => theme.scheme === "light" ? "white" : theme.colors.gray4};
         border-radius: 0.875rem;
         border: none;
-        padding: 4rem;
-        margin: 2.5rem 0;
+        padding: 4rem 3rem;
+        // margin: 2.5rem 0;
       //   transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
-      transform: translateZ(0);
-      pointer-events: none; 
     }
     > .category {
       // position: absolute;
