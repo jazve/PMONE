@@ -22,15 +22,13 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 
-// 过滤数据
-const filteredPosts = filterPosts(posts)
+  // 过滤数据
+  const filteredPosts = filterPosts(posts)
 
-// 确保数据中的 thumbnail 字段不为 undefined
-filteredPosts.forEach(post => {
-  if (typeof post.thumbnail === 'undefined') {
-    post.thumbnail = post.thumbnail ?? ''; // 将 undefined 转换为 null
-  }
-});
+  // 确保数据中的 thumbnail 字段不为 undefined
+  filteredPosts.forEach(post => {
+    post.thumbnail = post.thumbnail ?? ''; // 如果 post.thumbnail 是 undefined，使用空字符串
+  });
 
   await queryClient.prefetchQuery(queryKey.posts(1), () => filteredPosts)
 
@@ -41,7 +39,6 @@ filteredPosts.forEach(post => {
     revalidate: CONFIG.revalidateTime,
   }
 }
-
 
 const FeedPage: NextPageWithLayout = () => {
   const meta = {
