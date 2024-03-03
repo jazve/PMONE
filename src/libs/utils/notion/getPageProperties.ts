@@ -8,15 +8,17 @@ async function getPageProperties(
   block: BlockMap,
   schema: CollectionPropertySchemaMap
 ) {
-  const api = new NotionAPI()
-  const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
-  const excludeProperties = ["date", "select", "multi_select", "person", "file"]
-  const properties: any = {}
+  const api = new NotionAPI();
+  const rawProperties = Object.entries(block?.[id]?.value?.properties || []);
+  const excludeProperties = ["date", "select", "multi_select", "person", "file"];
+  const properties: any = {};
   for (let i = 0; i < rawProperties.length; i++) {
-    const [key, val]: any = rawProperties[i]
-    properties.id = id
-    if (schema[key]?.type && !excludeProperties.includes(schema[key].type)) {
-      properties[schema[key].name] = getTextContent(val)
+    const [key, val]: any = rawProperties[i];
+    properties.id = id;
+    // 如果字段不在排除列表中，或者是我们想要提取的 'content' 字段
+    if (schema[key]?.type && !excludeProperties.includes(schema[key].type) || schema[key].name === 'content') {
+      // 使用 getTextContent 函数提取文本内容
+      properties[schema[key].name] = getTextContent(val);
     } else {
       switch (schema[key]?.type) {
         case "file": {
