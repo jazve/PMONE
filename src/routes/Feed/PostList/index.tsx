@@ -10,8 +10,7 @@ type Props = {
 
 const PostList: React.FC<Props> = ({ q }) => {
   const router = useRouter()
-  const [page, setPage] = useState(1)
-  const { data = [], isFetchingNextPage, fetchNextPage } = usePostsQuery(page, 10) // pass the page and pageSize to the query
+  const data = usePostsQuery(1)
   const [filteredPosts, setFilteredPosts] = useState(data)
 
   const currentTag = `${router.query.tag || ``}` || undefined
@@ -51,10 +50,6 @@ const PostList: React.FC<Props> = ({ q }) => {
     })
   }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts])
 
-  const loadMorePosts = () => {
-    fetchNextPage({ pageParam: page + 1 }) // increment the page
-  }
-
   return (
     <>
       <div className="my-2">
@@ -64,11 +59,6 @@ const PostList: React.FC<Props> = ({ q }) => {
         {filteredPosts.map((post) => (
           <PostCard key={post.id} data={post} />
         ))}
-        {isFetchingNextPage ? (
-          <div>Loading more...</div>
-        ) : (
-          <button onClick={loadMorePosts}>Load more</button> // add a button to load more posts
-        )}
       </div>
     </>
   )
