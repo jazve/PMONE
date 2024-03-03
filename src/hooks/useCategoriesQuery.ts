@@ -9,7 +9,7 @@ export const useCategoriesQuery = () => {
     let postCount = 0;
 
     if (!postsQuery.isLoading && postsQuery.data) {
-        const posts = postsQuery.data.pages.flat();
+      const posts = postsQuery.data.pages.flat() as TPost[];
         categories = getAllSelectItemsFromPosts("category", posts);
         postCount = posts.length;
     }
