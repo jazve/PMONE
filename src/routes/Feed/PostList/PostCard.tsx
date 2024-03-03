@@ -94,11 +94,9 @@ const StyledWrapper = styled(Link)`
 
       // box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       //   0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      //  background-color: ${({ theme }) =>
-      //   theme.scheme === "light" ? "white" : theme.colors.gray4};
+      //   background-color: ${({ theme }) => theme.scheme === "light" ? "white" : theme.colors.gray4};
       //   border-radius: 1rem;
       //   border: none;
-      
       //   padding: 4rem;
       //   transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         
