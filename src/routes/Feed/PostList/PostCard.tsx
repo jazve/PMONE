@@ -18,7 +18,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
     <StyledWrapper href={`/${data.slug}`}>
       <article>
         
-        {data.thumbnail && (
+        {data.thumbnail && data.thumbnail !== " " && (
           <div className="thumbnail">
             <Image
               src={data.thumbnail}
@@ -28,8 +28,8 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-        
-        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
+
+        <div data-thumb={!!data.thumbnail && data.thumbnail !== ""} data-category={!!category} className="content">
         {/* {category && (
           <div className="category">
             <Category>{category}</Category>
