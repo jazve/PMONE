@@ -3,7 +3,7 @@ import usePostsQuery from "./usePostsQuery"
 import { getAllSelectItemsFromPosts } from "src/libs/utils/notion"
 
 export const useCategoriesQuery = () => {
-  const posts = usePostsQuery()
+  const posts = usePostsQuery(1) // pass 1 as the page parameter
   const categories = getAllSelectItemsFromPosts("category", posts)
 
   return {
