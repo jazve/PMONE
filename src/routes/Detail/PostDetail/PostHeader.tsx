@@ -41,8 +41,8 @@ const PostHeader: React.FC<Props> = ({ data }) => {
               </div>
             )}
           </div>
-          {data.thumbnail && (
-            <div className="thumbnail">
+          {data.thumbnail && data.thumbnail !== " " && (
+          <div className="thumbnail">
               <Image
                 src={data.thumbnail}
                 css={{ objectFit: "cover" }}
@@ -72,7 +72,7 @@ const StyledWrapper = styled.div`
     line-height: 1.75rem;
     opacity: 0.85;
     //段间距
-    
+
   }
   nav {
     margin-top: 1.5rem;
@@ -118,7 +118,7 @@ const StyledWrapper = styled.div`
       overflow: hidden;
       position: relative;
       margin-bottom: 1.75rem;
-      border-radius: 1.5rem;
+      border-radius: 0.875rem;
       width: 100%;
       background-color: ${({ theme }) => theme.colors.gray4};
       padding-bottom: 66%;
