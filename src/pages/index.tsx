@@ -10,7 +10,7 @@ import { dehydrate } from "@tanstack/react-query"
 import { filterPosts } from "src/libs/utils/notion"
 
 export const getStaticProps: GetStaticProps = async () => {
-  // 获取数据，确保获取到的是一个数组
+  // 获取数据
   const posts = await getPosts()
   if (!Array.isArray(posts)) {
     // 如果获取到的数据不是数组，则返回一个空数组
@@ -22,8 +22,16 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 
-  // 过滤数据，确保 posts 是一个有效的数组
+  // 过滤数据
   const filteredPosts = filterPosts(posts)
+
+  // 确保数据中的 thumbnail 字段不为 undefined
+  filteredPosts.forEach(post => {
+    if (typeof post.thumbnail === 'undefined') {
+      post.thumbnail = null; // 或者你可以选择删除这个字段，如果可以的话
+    }
+  });
+
   await queryClient.prefetchQuery(queryKey.posts(1), () => filteredPosts)
 
   return {
@@ -33,6 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: CONFIG.revalidateTime,
   }
 }
+
 
 const FeedPage: NextPageWithLayout = () => {
   const meta = {
