@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 
+
 const FeedPage: NextPageWithLayout = () => {
   const meta = {
     title: CONFIG.blog.title,
