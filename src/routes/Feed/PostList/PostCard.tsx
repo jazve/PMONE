@@ -80,7 +80,7 @@ const StyledWrapper = styled(Link)`
     transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
 
     @media (min-width: 768px) {
-      padding: 1rem;
+      // padding: 1rem;
     }
 
     :hover {

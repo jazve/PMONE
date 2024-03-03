@@ -71,6 +71,8 @@ const StyledWrapper = styled.div`
     font-size: 15px;
     line-height: 1.75rem;
     opacity: 0.85;
+    //段间距
+    
   }
   nav {
     margin-top: 1.5rem;
