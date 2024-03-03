@@ -14,28 +14,32 @@ const ServiceCard: React.FC = () => {
       <StyledWrapper>
         <a>
             <AiFillCodeSandboxCircle className="icon" />
-          <div className="name">商显OS设计（2023）</div>
+          <div className="name">商显OS设计</div>
         </a>
         <a>
             <AiFillCodeSandboxCircle className="icon" />
-          <div className="name">氧气PPT（2022）</div>
-          </a>
-        <a>
-            <AiFillCodeSandboxCircle className="icon" />
-          <div className="name">校早（2016-2023）</div>
+          <div className="name">校早</div>
           </a>
       </StyledWrapper>
       <StyledTitle>
         实验项目
       </StyledTitle>
       <StyledWrapper>
+      <a>
+            <AiFillExperiment className="icon" />
+          <div className="name">氧气PPT</div>
+        </a>
         <a>
             <AiFillExperiment className="icon" />
           <div className="name">视频读书</div>
         </a>
         <a>
             <AiFillExperiment className="icon" />
-          <div className="name">AI产品经理</div>
+          <div className="name">ChatRSS</div>
+          </a>
+        <a>
+            <AiFillExperiment className="icon" />
+          <div className="name">微聊阅读</div>
           </a>
       </StyledWrapper>
     </>
