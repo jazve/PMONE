@@ -68,7 +68,7 @@ const StyledWrapper = styled(Link)`
     overflow: hidden;
     position: relative;
     // margin-bottom: 1.5rem;
-    padding: 4rem;
+    padding: 2rem 4rem;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,.075);
     // border-radius: 1rem;
@@ -91,10 +91,11 @@ const StyledWrapper = styled(Link)`
       // 文字添加下划线
       // box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       //   0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      //   background-color: ${({ theme }) => theme.scheme === "light" ? "white" : theme.colors.gray4};
-      //   border-radius: 1rem;
-      //   border: none;
-      //   padding: 4rem;
+        background-color: ${({ theme }) => theme.scheme === "light" ? "white" : theme.colors.gray4};
+        border-radius: 0.875rem;
+        border: none;
+        padding: 4rem;
+        margin: 2.5rem 0;
       //   transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         
     }
