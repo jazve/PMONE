@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query"
 import { queryKey } from "src/constants/queryKey"
 import { TPost } from "src/types"
 
-const usePostsQuery = () => {
+const usePostsQuery = (page: number) => { // add a page parameter
   const { data } = useQuery({
-    queryKey: queryKey.posts(),
+    queryKey: queryKey.posts(page), // pass the page to the query key
     initialData: [] as TPost[],
     enabled: false,
   })
