@@ -81,6 +81,7 @@ const StyledWrapper = styled(Link)`
 
     @media (min-width: 768px) {
       // margin-bottom: 2rem;
+      padding: 1rem;
     }
 
     :hover {
@@ -95,7 +96,9 @@ const StyledWrapper = styled(Link)`
         // transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         // 文字添加下划线
         h2 {
-          text-decoration: underline;
+          // text-decoration: underline;
+          // 背景色
+          // background: ${({ theme }) => theme.colors.gray2};
         }
     }
     > .category {
