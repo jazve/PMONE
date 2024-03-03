@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 
-  // 过滤数据
+// 过滤数据
 const filteredPosts = filterPosts(posts)
 
 // 确保数据中的 thumbnail 字段不为 undefined
@@ -32,13 +32,14 @@ filteredPosts.forEach(post => {
   }
 });
 
-await queryClient.prefetchQuery(queryKey.posts(1), () => filteredPosts)
+  await queryClient.prefetchQuery(queryKey.posts(1), () => filteredPosts)
 
-return {
-  props: {
-    dehydratedState: dehydrate(queryClient),
-  },
-  revalidate: CONFIG.revalidateTime,
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+    revalidate: CONFIG.revalidateTime,
+  }
 }
 
 
