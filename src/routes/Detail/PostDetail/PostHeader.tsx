@@ -53,7 +53,8 @@ const PostHeader: React.FC<Props> = ({ data }) => {
           )}
         </nav>
       )}
-      {/* <p className="content">{data.content}</p> */}
+      {/* 显示content字段内容 */}
+      <div>{data.content}</div>
     </StyledWrapper>
   )
 }
