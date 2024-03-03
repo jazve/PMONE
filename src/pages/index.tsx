@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // 确保数据中的 thumbnail 字段不为 undefined
   filteredPosts.forEach(post => {
     if (typeof post.thumbnail === 'undefined') {
-      post.thumbnail = null; // 或者你可以选择删除这个字段，如果可以的话
+      delete post.thumbnail; // 删除 thumbnail 字段
     }
   });
 
@@ -41,7 +41,6 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: CONFIG.revalidateTime,
   }
 }
-
 
 
 const FeedPage: NextPageWithLayout = () => {
