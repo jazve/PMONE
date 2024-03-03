@@ -87,6 +87,7 @@ const StyledWrapper = styled(Link)`
       h2 {
         text-decoration: underline;
       }
+      
 
       // 文字添加下划线
       // box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -97,7 +98,8 @@ const StyledWrapper = styled(Link)`
         padding: 4rem;
         margin: 2.5rem 0;
       //   transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
-        
+      transform: translateZ(0);
+      pointer-events: none; 
     }
     > .category {
       // position: absolute;
