@@ -36,7 +36,7 @@ export const getPosts = async () => {
       const properties = (await getPageProperties(id, block, schema)) || {};
       properties.createdTime = new Date(block[id].value?.created_time).toString();
       properties.fullWidth = block[id].value?.format?.page_full_width ?? false;
-      properties.thumbnail = properties.thumbnail ?? 'default-thumbnail.png'; // Provide a default thumbnail if none exists.
+      properties.thumbnail = properties.thumbnail ?? ' '; // Provide a default thumbnail if none exists.
 
       data.push(properties);
     }
