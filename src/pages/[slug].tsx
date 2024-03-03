@@ -12,6 +12,23 @@ import { dehydrate } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
 
+import { GetStaticPaths } from 'next';
+// 在你的代码下方添加 getStaticPaths 函数
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPosts();
+  const filteredPosts = filterPosts(posts, filter);
+
+  // 获取所有帖子的 slug
+  const paths = filteredPosts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false, // 或者 'blocking' 如果你需要在请求时生成新的页面
+  };
+};
+
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
   acceptType: ["Paper", "Post", "Page"],
