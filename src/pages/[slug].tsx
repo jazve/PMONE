@@ -58,7 +58,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const DetailPage: NextPageWithLayout = () => {
   const post = usePostQuery()
 
-  if (!post) return <CustomError />
+  // 检查是否成功获取到 post 数据，如果没有则显示错误页面
+  if (!post || !post.slug) return <CustomError />
 
   const image =
     post.thumbnail ??
@@ -83,6 +84,7 @@ const DetailPage: NextPageWithLayout = () => {
     </>
   )
 }
+
 
 DetailPage.getLayout = (page) => {
   return <>{page}</>
