@@ -8,6 +8,21 @@ import { queryKey } from "src/constants/queryKey"
 import { GetStaticProps } from "next"
 import { dehydrate } from "@tanstack/react-query"
 import { filterPosts } from "src/libs/utils/notion"
+import { GetStaticPaths } from 'next';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPosts();
+  const filteredPosts = filterPosts(posts);
+
+  const paths = filteredPosts.map(post => ({
+    params: { slug: post.slug },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   // 获取数据
