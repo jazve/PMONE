@@ -28,7 +28,7 @@ const filteredPosts = filterPosts(posts)
 // 确保数据中的 thumbnail 字段不为 undefined
 filteredPosts.forEach(post => {
   if (typeof post.thumbnail === 'undefined') {
-    post.thumbnail = null; // 将 undefined 转换为 null
+    post.thumbnail = post.thumbnail || null; // 将 undefined 转换为 null
   }
 });
 
