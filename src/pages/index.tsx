@@ -23,23 +23,22 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 
   // 过滤数据
-  const filteredPosts = filterPosts(posts)
+const filteredPosts = filterPosts(posts)
 
-  // 确保数据中的 thumbnail 字段不为 undefined
-  filteredPosts.forEach(post => {
-    if (typeof post.thumbnail === 'undefined') {
-      post.thumbnail = null; // 将 undefined 修改为 null
-    }
-  });
-
-  await queryClient.prefetchQuery(queryKey.posts(1), () => filteredPosts)
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-    revalidate: CONFIG.revalidateTime,
+// 确保数据中的 thumbnail 字段不为 undefined
+filteredPosts.forEach(post => {
+  if (typeof post.thumbnail === 'undefined') {
+    post.thumbnail = null as string | null; // 使用类型断言将 null 赋值给 thumbnail
   }
+});
+
+await queryClient.prefetchQuery(queryKey.posts(1), () => filteredPosts)
+
+return {
+  props: {
+    dehydratedState: dehydrate(queryClient),
+  },
+  revalidate: CONFIG.revalidateTime,
 }
 
 
