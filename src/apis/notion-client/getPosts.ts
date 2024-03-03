@@ -51,4 +51,4 @@ export const getPosts = async () => {
     const posts = data as TPosts;
     return posts;
   }
-};
+}
