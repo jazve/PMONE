@@ -81,8 +81,7 @@ const StyledWrapper = styled(Link)`
 
     @media (min-width: 768px) {
       // margin-bottom: 2rem;
-      padding: 1rem;
-    }
+    }1
 
     :hover {
       // box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -98,7 +97,7 @@ const StyledWrapper = styled(Link)`
         h2 {
           text-decoration: underline;
           // 背景色黑
-          background-color: gba(0,0,0,0.05);
+          background-color: rgba(0,0,0,0.05);
         }
     }
     > .category {
