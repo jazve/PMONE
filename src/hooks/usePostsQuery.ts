@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query"
 import { queryKey } from "src/constants/queryKey"
 import { TPost } from "src/types"
 
-const usePostsQuery = (page: number) => { // add a page parameter
+const usePostsQuery = (page: number, pageSize: number = 10) => { // add a pageSize parameter with a default value of 10
   const { data } = useQuery({
-    queryKey: queryKey.posts(page), // pass the page to the query key
+    queryKey: queryKey.posts(page, pageSize), // pass the page and pageSize to the query key
     initialData: [] as TPost[],
     enabled: false,
   })
