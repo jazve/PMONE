@@ -96,9 +96,9 @@ const StyledWrapper = styled(Link)`
         // transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
         // 文字添加下划线
         h2 {
-          // text-decoration: underline;
-          // 背景色
-          // background: ${({ theme }) => theme.colors.gray2};
+          text-decoration: underline;
+          // 背景色黑
+          background-color: gba(0,0,0,0.05);
         }
     }
     > .category {
