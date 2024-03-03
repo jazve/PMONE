@@ -1,21 +1,17 @@
-import { useInfiniteQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query"
 import { queryKey } from "src/constants/queryKey"
 import { TPost } from "src/types"
 
-const usePostsQuery = (pageSize: number = 10) => {
-  return useInfiniteQuery(
-    queryKey.posts,
-    async ({ pageParam = 0 }) => {
-      const response = await fetch(`/api/posts?page=${pageParam}&limit=${pageSize}`);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    },
-    {
-      getNextPageParam: (lastPage, pages) => lastPage.nextPage,
-    }
-  );
-};
+const usePostsQuery = (page: number, pageSize: number = 10) => { // add a pageSize parameter with a default value of 10
+  const { data } = useQuery({
+    queryKey: queryKey.posts(page, pageSize), // pass the page and pageSize to the query key
+    initialData: [] as TPost[],
+    enabled: false,
+  })
 
-export default usePostsQuery;
+  if (!data) throw new Error("Posts data is not found")
+
+  return data
+}
+
+export default usePostsQuery
