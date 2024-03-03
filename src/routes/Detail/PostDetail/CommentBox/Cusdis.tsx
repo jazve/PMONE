@@ -9,7 +9,6 @@ type Props = {
   id: string
   slug: string
   title: string
-  content: string
 }
 
 const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
