@@ -17,26 +17,33 @@ const filter: FilterPostsOptions = {
   acceptType: ["Paper", "Post", "Page"],
 }
 
-export const getStaticPaths = async () => {
-  const posts = await getPosts()
-  const filteredPost = filterPosts(posts, filter)
-
-  return {
-    paths: filteredPost.map((row) => `/${row.slug}`),
-    fallback: true,
-  }
-}
-
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug
+
+  // 检查 slug 是否存在
+  if (!slug) {
+    return {
+      notFound: true,
+    }
+  }
 
   const posts = await getPosts()
   const feedPosts = filterPosts(posts)
   await queryClient.prefetchQuery(queryKey.posts(1), () => feedPosts)
 
   const detailPosts = filterPosts(posts, filter)
+  
+  // 根据 slug 查找对应的 postDetail
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
-  const recordMap = await getRecordMap(postDetail?.id!)
+
+  // 检查 postDetail 是否存在
+  if (!postDetail) {
+    return {
+      notFound: true,
+    }
+  }
+
+  const recordMap = await getRecordMap(postDetail.id)
 
   // 确保 postDetail 和 recordMap 不是 undefined
   const safePostDetail = postDetail ?? {}
@@ -84,7 +91,6 @@ const DetailPage: NextPageWithLayout = () => {
     </>
   )
 }
-
 
 DetailPage.getLayout = (page) => {
   return <>{page}</>

@@ -25,10 +25,10 @@ export const getStaticProps: GetStaticProps = async () => {
   // 过滤数据
   const filteredPosts = filterPosts(posts)
 
-  // 确保数据中的 thumbnail 字段不为 undefined
+  // 确保数据中的 thumbnail 字段存在且不为 undefined
   filteredPosts.forEach(post => {
     if (typeof post.thumbnail === 'undefined') {
-      delete post.thumbnail; // 删除 thumbnail 字段
+      post.thumbnail = null; // 或者你可以选择将其设置为 null
     }
   });
 
