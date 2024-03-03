@@ -81,17 +81,15 @@ const StyledWrapper = styled(Link)`
 
     @media (min-width: 768px) {
       // margin-bottom: 2rem;
-    }1
+    }
 
     :hover {
+      h2 {
+        text-decoration: underline;
+      }
+      margin: 2rem 0;
 
       // 文字添加下划线
-        h2 {
-          text-decoration: underline;
-        }
-
-        margin: 2rem 0;
-
       // box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       //   0 4px 6px -2px rgba(0, 0, 0, 0.05);
       //   background-color: ${({ theme }) => theme.scheme === "light" ? "white" : theme.colors.gray4};
