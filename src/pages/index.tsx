@@ -11,7 +11,8 @@ import { filterPosts } from "src/libs/utils/notion"
 
 export const getStaticProps: GetStaticProps = async () => {
   // 获取数据
-  const posts = await getPosts()
+  const posts = await getPosts();
+
   if (!Array.isArray(posts)) {
     // 如果获取到的数据不是数组，则返回一个空数组
     return {
@@ -19,26 +20,26 @@ export const getStaticProps: GetStaticProps = async () => {
         dehydratedState: dehydrate(queryClient),
       },
       revalidate: CONFIG.revalidateTime,
-    }
+    };
   }
 
   // 过滤数据
-  const filteredPosts = filterPosts(posts)
+  const filteredPosts = filterPosts(posts).map(post => ({
+    ...post,
+    thumbnail: post.thumbnail ?? '', // 确保 thumbnail 不是 undefined
+  }));
 
-  // 确保数据中的 thumbnail 字段不为 undefined
-  filteredPosts.forEach(post => {
-    post.thumbnail = post.thumbnail ?? ''; // 如果 post.thumbnail 是 undefined，使用空字符串
-  });
-
-  await queryClient.prefetchQuery(queryKey.posts(1), () => filteredPosts)
+  // 使用处理后的数据预取
+  await queryClient.prefetchQuery(queryKey.posts(1), () => Promise.resolve(filteredPosts));
 
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
     },
     revalidate: CONFIG.revalidateTime,
-  }
-}
+  };
+};
+
 
 const FeedPage: NextPageWithLayout = () => {
   const meta = {
