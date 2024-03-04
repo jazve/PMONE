@@ -9,10 +9,12 @@ type Props = {
   q: string;
 };
 
+const POSTS_PER_PAGE = 10; // 每页帖子数量
+
 const PostList: React.FC<Props> = ({ q }) => {
   const router = useRouter();
   const [page, setPage] = useState(1); // 新增状态来存储当前页码
-  const data = usePostsQuery(page); // 修改这里以传递当前页码
+  const data = usePostsQuery(page, POSTS_PER_PAGE); // 修改这里以传递当前页码和每页帖子数量
   const [filteredPosts, setFilteredPosts] = useState<TPost[]>([]);
 
   const currentTag = `${router.query.tag || ``}` || undefined;
