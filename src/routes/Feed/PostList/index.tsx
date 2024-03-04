@@ -25,7 +25,7 @@ const PostList: React.FC<Props> = ({ q }) => {
     if (q) {
       newFilteredPosts = newFilteredPosts.filter(post =>
         post.title.toLowerCase().includes(q.toLowerCase()) ||
-        post.summary.toLowerCase().includes(q.toLowerCase()) ||
+        (post.summary && post.summary.toLowerCase().includes(q.toLowerCase())) || // 检查 post.summary 是否存在
         (post.tags && post.tags.some(tag => tag.toLowerCase().includes(q.toLowerCase())))
       );
     }
