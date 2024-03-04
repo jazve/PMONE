@@ -67,7 +67,7 @@ const StyledWrapper = styled(Link)`
   article {
     overflow: hidden;
     position: relative;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
     padding: 2rem 4rem;
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,.075);
@@ -79,9 +79,7 @@ const StyledWrapper = styled(Link)`
     transition-duration: 300ms;
     transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
 
-    @media (min-width: 768px) {
-      // padding: 1rem;
-    }
+    
 
     :hover {
       h2 {
@@ -99,6 +97,18 @@ const StyledWrapper = styled(Link)`
         // margin: 2.5rem 0;
       //   transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     }
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+
+      :hover {
+        h2 {
+          text-decoration: underline;
+        }
+        padding: 1.5rem;
+      }
+    }
+
     > .category {
       // position: absolute;
       margin: 1rem 0;
