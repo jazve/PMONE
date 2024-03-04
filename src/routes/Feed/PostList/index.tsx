@@ -12,7 +12,7 @@ const PostList: React.FC<Props> = ({ q }) => {
   const router = useRouter();
   const [page, setPage] = useState(1); // 新增状态来存储当前页码
   const data = usePostsQuery(page); // 修改这里以传递当前页码
-  const [filteredPosts, setFilteredPosts] = useState<TPost[]>([]); // 确保初始值和类型定义都是 TPost[] 类型
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
   const currentTag = `${router.query.tag || ``}` || undefined;
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY;
