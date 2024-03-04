@@ -80,22 +80,17 @@ const StyledWrapper = styled(Link)`
     transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
 
     
+    @media (min-width: 768px) {
+      :hover {
+        h2 {
+          text-decoration: underline;
+        }
 
-    :hover {
-      h2 {
-        text-decoration: underline;
+          background-color: ${({ theme }) => theme.scheme === "light" ? "white" : theme.colors.gray4};
+          border-radius: 0.875rem;
+          border: none;
+          padding: 5rem 4rem;
       }
-      
-
-      // 文字添加下划线
-      // box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      //   0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        background-color: ${({ theme }) => theme.scheme === "light" ? "white" : theme.colors.gray4};
-        border-radius: 0.875rem;
-        border: none;
-        padding: 5rem 4rem;
-        // margin: 2.5rem 0;
-      //   transition: background-color 0.3s ease, border-radius 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     }
 
     @media (max-width: 768px) {
@@ -125,7 +120,7 @@ const StyledWrapper = styled(Link)`
       width: 100%;
       background-color: ${({ theme }) => theme.colors.gray2};
       padding-bottom: 66%;
-
+      margin-bottom: 1.5rem;
       img {
         border-radius: 1rem;
       }
@@ -135,7 +130,7 @@ const StyledWrapper = styled(Link)`
       }
     }
     > .content {
-      padding-top: 1rem;
+      // padding-top: 1rem;
 
       &[data-thumb="false"] {
         padding-top: 0rem;
