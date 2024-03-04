@@ -1,13 +1,13 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "野生产品经理",
+    name: "一个产品经理",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "科技与人文的十字路口",
     bio: "站在科技和人文的十字路口",
-    email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
+    email: "493550274@qq.com",
+    linkedin: "jazve",
+    github: "jazve",
     instagram: "",
   },
   projects: [
