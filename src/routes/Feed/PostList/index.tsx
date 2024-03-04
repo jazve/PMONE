@@ -40,7 +40,7 @@ const PostList: React.FC<Props> = ({ q }) => {
     // 根据当前分类过滤帖子
     if (currentCategory !== DEFAULT_CATEGORY) {
       newFilteredPosts = newFilteredPosts.filter(post =>
-        post.category && post.category === currentCategory
+        post.category && post.category.includes(currentCategory) // 使用 includes() 方法
       );
     }
   
