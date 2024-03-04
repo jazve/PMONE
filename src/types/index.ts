@@ -49,4 +49,9 @@ export type TCategories = {
   [category: string]: number
 }
 
+export interface CategoryData {
+  [key: string]: number;
+}
+
+
 export type ThemeType = "dark" | "light"

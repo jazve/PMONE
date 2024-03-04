@@ -1,6 +1,7 @@
 import { DEFAULT_CATEGORY } from "src/constants"
 import usePostsQuery from "./usePostsQuery"
 import { getAllSelectItemsFromPosts } from "src/libs/utils/notion"
+import { CategoryData } from './types';
 
 export const useCategoriesQuery = () => {
   const { data: posts, isLoading, isError } = usePostsQuery(1);

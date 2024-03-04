@@ -8,7 +8,7 @@ import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
 
 type Props = {}
 
-interface CategoryData {
+export interface CategoryData {
   [key: string]: number;
 }
 
