@@ -57,4 +57,11 @@ const StyledWrapper = styled.div`
     margin: 0 auto;
     max-width: 42rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    > article {
+      max-width: 100%;
+    }
+  }
 `
