@@ -19,7 +19,7 @@ const PostList: React.FC<Props> = ({ q }) => {
   const currentOrder = `${router.query.order || ``}` || "desc";
 
   useEffect(() => {
-    let newFilteredPosts = data || []; // 假设 data 是 TPost[] 类型的数组
+    let newFilteredPosts = data.data || []; // 这里假设 data.data 是 TPost[] 类型的数组
   
     // 根据关键词 q 过滤帖子
     if (q) {
