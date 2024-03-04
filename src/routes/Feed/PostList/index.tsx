@@ -20,7 +20,7 @@ const PostList: React.FC<Props> = ({ q }) => {
 
   useEffect(() => {
     setFilteredPosts(() => {
-      let newFilteredPosts = data; // 这里假设 data 已经是当前页的数据
+      let newFilteredPosts = data.data; // 这里假设 data 已经是当前页的数据
       // keyword
       newFilteredPosts = newFilteredPosts.filter((post) => {
         const tagContent = post.tags ? post.tags.join(" ") : ""
