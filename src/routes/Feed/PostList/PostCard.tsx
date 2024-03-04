@@ -101,6 +101,10 @@ const StyledWrapper = styled(Link)`
     @media (max-width: 768px) {
       padding: 1.5rem;
 
+      h2 {
+        font-size: 16px !important;
+      }
+
       :hover {
         h2 {
           text-decoration: underline;
