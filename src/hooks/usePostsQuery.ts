@@ -1,17 +1,33 @@
-import { useQuery } from "@tanstack/react-query"
-import { queryKey } from "src/constants/queryKey"
-import { TPost } from "src/types"
+import { useQuery } from "@tanstack/react-query";
+import { queryKey } from "src/constants/queryKey";
+import { TPost } from "src/types";
 
-const usePostsQuery = (page: number) => { // add a page parameter
-  const { data } = useQuery({
-    queryKey: queryKey.posts(page), // pass the page to the query key
-    initialData: [] as TPost[],
-    enabled: false,
-  })
+// 假设的fetchPosts函数，根据页码获取数据
+const fetchPosts = async (page: number): Promise<TPost[]> => {
+  const response = await fetch(`/api/posts?page=${page}`);
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+};
 
-  if (!data) throw new Error("Posts data is not found")
+const usePostsQuery = (page: number) => {
+  const { data, error, isLoading, isError } = useQuery({
+    queryKey: queryKey.posts(page), // 使用页码作为查询键的一部分
+    queryFn: () => fetchPosts(page), // 添加查询函数
+    // initialData: [] as TPost[], // 初始数据可以保留，但在这个上下文中可能不需要
+  });
 
-  return data
-}
+  // 错误处理
+  if (isError) {
+    console.error(error);
+  }
 
-export default usePostsQuery
+  return {
+    data: data || [], // 如果data为undefined，返回空数组
+    isLoading,
+    isError,
+  };
+};
+
+export default usePostsQuery;
