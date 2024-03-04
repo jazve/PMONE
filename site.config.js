@@ -27,7 +27,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "PMONE",
+    title: "ONEPM",
     description: "一个兴趣使然的野生经理",
   },
 
