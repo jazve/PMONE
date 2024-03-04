@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import PostCard from "src/routes/Feed/PostList/PostCard";
 import { DEFAULT_CATEGORY } from "src/constants";
 import usePostsQuery from "src/hooks/usePostsQuery";
-import { TPosts } from "src/types"
+import { TPost } from "src/types";
 
 type Props = {
   q: string;
@@ -13,7 +13,7 @@ const PostList: React.FC<Props> = ({ q }) => {
   const router = useRouter();
   const [page, setPage] = useState(1); // 新增状态来存储当前页码
   const data = usePostsQuery(page); // 修改这里以传递当前页码
-  const [filteredPosts, setFilteredPosts] = useState<TPosts[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<TPost[]>([]);
 
   const currentTag = `${router.query.tag || ``}` || undefined;
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY;
