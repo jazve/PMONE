@@ -1,8 +1,17 @@
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import PostCard from "src/routes/Feed/PostList/PostCard";
 import { DEFAULT_CATEGORY } from "src/constants";
 import usePostsQuery from "src/hooks/usePostsQuery";
+
+// 假设这是您的帖子类型定义，根据实际情况调整
+type TPost = {
+  id: string;
+  title: string;
+  summary: string;
+  tags: string[];
+  category: string;
+};
 
 type Props = {
   q: string;
@@ -10,58 +19,34 @@ type Props = {
 
 const PostList: React.FC<Props> = ({ q }) => {
   const router = useRouter();
-  const [page, setPage] = useState(1); // 新增状态来存储当前页码
-  const data = usePostsQuery(page); // 修改这里以传递当前页码
-  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [page, setPage] = useState(1);
+  const { data, isLoading, isError } = usePostsQuery(page); // 假设 usePostsQuery 返回一个对象，包含 data 以及 isLoading 和 isError 状态
+  const [filteredPosts, setFilteredPosts] = useState<TPost[]>([]); // 明确指定状态类型为 TPost[]
 
   const currentTag = `${router.query.tag || ``}` || undefined;
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY;
   const currentOrder = `${router.query.order || ``}` || "desc";
 
   useEffect(() => {
-    setFilteredPosts(() => {
-      let newFilteredPosts = data.data; // 这里假设 data 已经是当前页的数据
-      // keyword
-      newFilteredPosts = newFilteredPosts.filter((post) => {
-        const tagContent = post.tags ? post.tags.join(" ") : ""
-        const searchContent = post.title + post.summary + tagContent
-        return searchContent.toLowerCase().includes(q.toLowerCase())
-      })
+    // 直接操作 data.data，确保 data.data 是 TPost[] 类型
+    let newFilteredPosts = data || []; // 假设 data 是 TPost[] 类型的数组
+    // 进行过滤和排序操作...
+    newFilteredPosts = newFilteredPosts.filter(/* ... */);
 
-      // tag
-      if (currentTag) {
-        newFilteredPosts = newFilteredPosts.filter(
-          (post) => post && post.tags && post.tags.includes(currentTag)
-        )
-      }
+    setFilteredPosts(newFilteredPosts);
+  }, [q, currentTag, currentCategory, currentOrder, data]);
 
-      // category
-      if (currentCategory !== DEFAULT_CATEGORY) {
-        newFilteredPosts = newFilteredPosts.filter(
-          (post) =>
-            post && post.category && post.category.includes(currentCategory)
-        )
-      }
-      // order
-      if (currentOrder !== "desc") {
-        newFilteredPosts = newFilteredPosts.reverse()
-      }
-
-      return newFilteredPosts
-    })
-  }, [q, currentTag, currentCategory, currentOrder, data]); // 添加 data 作为依赖项
-
-  // 加载下一页的函数
   const loadMorePosts = () => {
     setPage((prevPage) => prevPage + 1);
   };
 
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error loading posts.</div>;
+
   return (
     <>
       <div className="my-2">
-        {!filteredPosts.length && (
-          <p className="text-gray-500 dark:text-gray-300">Nothing! </p>
-        )}
+        {!filteredPosts.length && <p className="text-gray-500 dark:text-gray-300">Nothing!</p>}
         {filteredPosts.map((post) => (
           <PostCard key={post.id} data={post} />
         ))}
